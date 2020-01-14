@@ -8,6 +8,9 @@ import { RouterModule } from '@angular/router';
 import { StartComponent } from './start/start.component';
 import { PackageComponent } from './package/package.component';
 import { FinancialTransactionComponent } from './financial-transaction/financial-transaction.component';
+import { LettersService } from './services/letters.service';
+import { PackagesService } from './services/packages.service';
+import { CitiesService } from './services/cities.service';
 
 
 const appRoutes = [
@@ -32,7 +35,11 @@ const appRoutes = [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    LettersService,
+    PackagesService,
+    CitiesService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
