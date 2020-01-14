@@ -11,6 +11,8 @@ import { FinancialTransactionComponent } from './financial-transaction/financial
 
 
 const appRoutes = [
+  { path: '', component: StartComponent },
+  { path: 'start', component: StartComponent },
   { path: 'letter', component: LettersComponent },
   { path: 'package', component: PackageComponent },
   { path: 'finance', component: FinancialTransactionComponent }
