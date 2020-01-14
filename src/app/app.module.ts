@@ -11,6 +11,12 @@ import { FinancialTransactionComponent } from './financial-transaction/financial
 import { LettersService } from './services/letters.service';
 import { PackagesService } from './services/packages.service';
 import { CitiesService } from './services/cities.service';
+import { HttpModule } from '@angular/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { UserComponent } from './user/user.component';
+import { AddNewUserComponent } from './add-new-user/add-new-user.component';
+import { MAT_DIALOG_DEFAULT_OPTIONS, MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { MatInputModule } from '@angular/material/input';
 
 
 const appRoutes = [
@@ -26,19 +32,31 @@ const appRoutes = [
     LettersComponent,
     StartComponent,
     PackageComponent,
-    FinancialTransactionComponent
+    FinancialTransactionComponent,
+    UserComponent,
+    AddNewUserComponent,
+    
+  ],
+  entryComponents: [
+    UserComponent
   ],
   imports: [
     RouterModule.forRoot(
-      appRoutes, { enableTracing: true } // <-- debugging purposes only
+      appRoutes, { /*enableTracing: true*/ } // <-- debugging purposes only
     ),
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule, 
+    HttpModule,
+    MatDialogModule,
+    BrowserAnimationsModule,
   ],
   providers: [
+    MatDialogModule,
+    MatInputModule,
     LettersService,
     PackagesService,
-    CitiesService
+    CitiesService,
+    {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}},
   ],
   bootstrap: [AppComponent]
 })

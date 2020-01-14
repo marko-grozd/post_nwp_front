@@ -1,1 +1,8 @@
-<p>letters works!</p>
+<h3>Unos nove posiljke</h3>
+
+<select class="custom-select">
+    <option selected>Open this select menu</option>  
+    <option *ngFor="let city of allCities" value = "{{ city.postanskiBroj }}">{{ city.naziv }} {{ city.postanskiBroj }}</option>
+</select>
+<button type="button" class="btn btn-warning" (click)="selectrecipient()"> Prima </button>
+<button type="button" class="btn btn-warning">Šalje </button>
