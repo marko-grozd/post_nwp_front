@@ -1,1 +1,26 @@
-<p>user works!</p>
+<table id="dtDynamicVerticalScrollExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+    <thead>
+        <tr>
+            <th class="th-sm">ime</th>
+            <th class="th-sm">prezime</th>
+            <th class="th-sm">email</th>
+            <th class="th-sm">grad</th>
+            <th class="th-sm">ulica</th>
+            <th class="th-sm">kucni broj</th>
+            <th class="th-sm">broj lk.</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let us of users">
+            <td>{{ us.ime }} </td>
+            <td>{{ us.prezime }} </td>
+            <td>{{ us.email }} </td>
+            <td>{{ us.adresa.grad.naziv }} ({{ us.adresa.grad.postanskiBroj }}) </td>
+            <td>{{ us.adresa.nazivUlice }} </td>
+            <td>{{ us.kucniBroj }} </td>
+            <td>{{ us.brojLk }} </td>
+        </tr>
+    </tbody>
+
+
+</table>
