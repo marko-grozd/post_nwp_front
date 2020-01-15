@@ -14,4 +14,8 @@ export class UsersService {
   getAllUsers() {
     return this.http.get(this.url);
   }
+
+  findById(id) {
+    return this.http.get(this.url+"/"+id);
+  }
 }

@@ -19,8 +19,11 @@
             <td>{{ us.adresa.nazivUlice }} </td>
             <td>{{ us.kucniBroj }} </td>
             <td>{{ us.brojLk }} </td>
+            <td><button (click)="btn(us.idKorisnik)">Odaberi</button></td>
         </tr>
     </tbody>
 
+    <img class="clickable" (click)="closeWindow()" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRvhdeEnM7JDS92pRqQZhN3ORF-rpSETYSbxu68AK3-aLjVUS4b" 
+        width="50" height="50"/>
 
 </table>

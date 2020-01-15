@@ -4,5 +4,34 @@
     <option selected>Open this select menu</option>  
     <option *ngFor="let city of allCities" value = "{{ city.postanskiBroj }}">{{ city.naziv }} {{ city.postanskiBroj }}</option>
 </select>
-<button type="button" class="btn btn-warning" (click)="selectrecipient()"> Prima </button>
-<button type="button" class="btn btn-warning">Šalje </button>
+
+
+<form [formGroup] = "letterForm" (ngSubmit)="onSubmit(letterForm.value)">
+    <table>
+        <tr>
+            <td>Tip: 
+                <select formControlName="recommended">
+                    <option value="1">Preporuceno</option>
+                    <option value="0">Obicno</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><button type="button" class="btn btn-warning" (click)="selectrecipient()"> Prima </button></td>
+            <td *ngIf="recipient != undefined"> {{ recipient.ime }} {{recipient.prezime }} </td>
+            <td><button type="button" class="btn btn-warning" (click)="selectsender()">Šalje </button></td>
+            <td *ngIf="sender != undefined">{{ this.sender.ime }} {{ this.sender.prezime }}</td>
+        </tr>
+    </table>
+    <input type="submit" value="Unesi">
+</form>
+
+<div class="form-check">
+
+    
+   
+    
+</div>
+
+
+

@@ -1,3 +1,5 @@
+import { Korisnik } from './korisnik';
+
 export class Pismo {
 
     private idpismo: number;
@@ -6,8 +8,8 @@ export class Pismo {
         private preporuceno: boolean, 
         private datumPrispeca: string,
         private datumPrijema: string,
-        private primalac: number,
-        private posiljalac: number) {}
+        private korisnik1: Korisnik,      //primalac
+        private korisnik2: Korisnik) {}   //posiljalac
     
 
     

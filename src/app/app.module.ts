@@ -17,6 +17,7 @@ import { UserComponent } from './user/user.component';
 import { AddNewUserComponent } from './add-new-user/add-new-user.component';
 import { MAT_DIALOG_DEFAULT_OPTIONS, MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 const appRoutes = [
@@ -45,6 +46,7 @@ const appRoutes = [
       appRoutes, { /*enableTracing: true*/ } // <-- debugging purposes only
     ),
     BrowserModule,
+    ReactiveFormsModule,
     AppRoutingModule, 
     HttpModule,
     MatDialogModule,
