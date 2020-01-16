@@ -18,4 +18,8 @@ export class UsersService {
   findById(id) {
     return this.http.get(this.url+"/"+id);
   }
+
+  insertUser(user) {
+    return this.http.post(this.url, user);
+  }
 }

@@ -14,4 +14,9 @@ export class LettersService {
   insertLetter(pismo) {
     return this.http.post(this.url, pismo);
   }
+
+  allLetters() {
+    return this.http.get(this.url);
+  }
+  
 }
