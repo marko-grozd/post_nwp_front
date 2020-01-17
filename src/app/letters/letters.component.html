@@ -1,9 +1,6 @@
 <h3>Unos nove posiljke</h3>
 
-<select class="custom-select">
-    <option selected>Open this select menu</option>  
-    <option *ngFor="let city of allCities" value = "{{ city.postanskiBroj }}">{{ city.naziv }} {{ city.postanskiBroj }}</option>
-</select>
+
 
 
 <form [formGroup] = "letterForm" (ngSubmit)="onSubmit(letterForm.value)">

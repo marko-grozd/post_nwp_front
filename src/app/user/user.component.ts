@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UsersService } from '../services/users.service';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { Korisnik } from '../models/korisnik';
+import { AddNewUserComponent } from '../add-new-user/add-new-user.component';
 
 @Component({
   selector: 'app-user',
@@ -17,22 +18,25 @@ export class UserComponent implements OnInit {
 
   ngOnInit() {
 
+    this.getUsers();
+
+  }
+
+  getUsers() {
+
     this.service.getAllUsers()
     .subscribe(resp => {
       this.users = resp.json();
     }, err=> {
       console.log(err);
-    })
+    });
 
   }
 
   btn(ref) {
-    this.korisnik = new Korisnik('', '', 0);
     this.service.findById(ref)
     .subscribe(resp => {
-        this.korisnik.setIme(resp.json()['ime']);
-        this.korisnik.setPrezime(resp.json()['prezime']);
-        this.korisnik.setId(resp.json()['idKorisnik']);
+      this.korisnik = resp.json();
     });
     this.dialogRef.close(this.korisnik);
   }
@@ -41,5 +45,20 @@ export class UserComponent implements OnInit {
     this.dialogRef.close();
   }
 
+  openaddnewuserdialog() {
+    this.dialog.open(AddNewUserComponent)
+    .afterClosed().subscribe(
+      resp => this.getUsers()
+    );
+  }
+
 
 }
+
+
+
+
+
+
+
+

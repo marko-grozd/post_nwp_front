@@ -1,0 +1,15 @@
+<select class="custom-select" (change)="onSelect($event.target.value)">
+    <option selected>Odaberite grad</option>  
+    <option *ngFor="let city of allCities" value = "{{ city.postanskiBroj }}">{{ city.naziv }} {{ city.postanskiBroj }}</option>
+</select>
+
+<form class="example=form" [formGroup]="addressForm">
+  <mat-form-field class="example-full-width">
+    <input type="text" placeholder="Naziv ulice" aria-label="Number" matInput [formControl]="addressForm" [matAutocomplete]="auto">
+    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+      <mat-option *ngFor="let option of filteredOptions | async" [value]="option.nazivUlice" (click)="selectStreed(option.idAdresa)">
+        {{option.nazivUlice}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</form>

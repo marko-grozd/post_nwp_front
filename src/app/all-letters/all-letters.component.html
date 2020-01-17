@@ -1,0 +1,22 @@
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">tip</th>
+        <th scope="col">šalje</th>
+        <th scope="col">pošta prijema</th>
+        <th scope="col">datum prijema</th>
+        <th scope="col">prima</th>
+        <th scope="col">pošta prijema</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let lett of allLetters">
+        <td *ngIf="lett.preporuceno == 1; else elseBlock">preporučeno</td><ng-template #elseBlock><td>obično</td></ng-template>
+        <td>{{ lett.korisnik2.ime }} {{ lett.korisnik2.prezime }} </td>
+        <td>{{ lett.korisnik2.adresa.grad.postanskiBroj }} ( {{ lett.korisnik2.adresa.grad.naziv }} )</td>
+        <td>{{ lett.datumPrijema }} </td>
+        <td>{{ lett.korisnik1.ime }} {{ lett.korisnik2.prezime }} </td>
+        <td>{{ lett.korisnik1.adresa.grad.postanskiBroj }} ( {{ lett.korisnik1.adresa.grad.naziv }} )</td>
+      </tr>
+    </tbody>
+  </table>

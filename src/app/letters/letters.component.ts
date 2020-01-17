@@ -15,7 +15,7 @@ import { LettersService } from '../services/letters.service';
 })
 export class LettersComponent implements OnInit {
 
-  private allCities = [];
+
   private recipient: Korisnik;
   private sender: Korisnik;
   letterForm;
@@ -28,13 +28,7 @@ export class LettersComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.cityService.getAllCities()
-    .subscribe(resp => {
-      console.log(resp);
-      this.allCities = resp.json();
-    }, err => {
-      console.log(err);
-    });
+    
   }
 
   selectrecipient() {

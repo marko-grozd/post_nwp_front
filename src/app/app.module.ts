@@ -18,14 +18,17 @@ import { AddNewUserComponent } from './add-new-user/add-new-user.component';
 import { MAT_DIALOG_DEFAULT_OPTIONS, MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { AllLettersComponent } from './all-letters/all-letters.component';
+import { AddressesComponent } from './addresses/addresses.component';
+import { MatSelectModule, MatAutocomplete, MatAutocompleteModule } from '@angular/material';
 
 const appRoutes = [
   { path: '', component: StartComponent },
   { path: 'start', component: StartComponent },
   { path: 'letter', component: LettersComponent },
   { path: 'package', component: PackageComponent },
-  { path: 'finance', component: FinancialTransactionComponent }
+  { path: 'finance', component: FinancialTransactionComponent },
+  { path: 'allLetters', component: AllLettersComponent },
 ]
 @NgModule({
   declarations: [
@@ -36,21 +39,27 @@ const appRoutes = [
     FinancialTransactionComponent,
     UserComponent,
     AddNewUserComponent,
-    
+    AllLettersComponent,
+    AddressesComponent,
   ],
   entryComponents: [
-    UserComponent
+    UserComponent,
+    AddNewUserComponent,
+    AddressesComponent,
   ],
   imports: [
     RouterModule.forRoot(
       appRoutes, { /*enableTracing: true*/ } // <-- debugging purposes only
     ),
+    MatSelectModule,
     BrowserModule,
     ReactiveFormsModule,
     AppRoutingModule, 
     HttpModule,
     MatDialogModule,
     BrowserAnimationsModule,
+    MatAutocompleteModule,
+    MatInputModule,
   ],
   providers: [
     MatDialogModule,

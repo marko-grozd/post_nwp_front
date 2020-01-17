@@ -1,1 +1,34 @@
-<p>add-new-user works!</p>
+
+<form [formGroup] = "userForm">
+    <table>
+        <tr>
+            <td><label>ime</label></td>
+            <td><input type="text" formControlName="ime"></td>
+        </tr>
+        <tr>
+            <td><label>prezime</label></td>
+            <td><input type="text" formControlName="prezime"></td>
+        </tr>
+        <tr>
+            <td><label>email</label></td>
+            <td><input type="text" formControlName="email"></td>
+        </tr>
+        <tr>
+            <td><label>broj telefona</label></td>
+            <td><input type="text" formControlName="broj_telefona"></td>
+        </tr>
+        <tr>
+            <td><label>broj licne karte</label></td>
+            <td><input type="text" formControlName="broj_lk"></td>
+        </tr>
+        <tr>
+            <td><button (click)="insertAddress()">Unos adrese</button></td>
+            <td>{{ addressName }}</td>
+        </tr>
+        <tr>
+            <td><label>kucni broj</label></td>
+            <td><input type="text" formControlName="kucni_broj"></td>
+        </tr>
+        <tr><td><input type="submit" value="Unesi" (click)="onSubmit(userForm.value)"></td></tr>
+    </table>
+</form>
