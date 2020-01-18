@@ -1,1 +1,16 @@
-<p>package works!</p>
+<form [formGroup] = "packageForm">
+
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1">Napomena </label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" formControlName="napomena"></textarea>
+        <label>Tezina</label>
+        <input type="text" formControlName="tezina"/>
+        <button type="button" class="btn btn-warning" (click)="selectrecipient()"> Prima </button>
+        <button type="button" class="btn btn-warning" (click)="selectsender()">Šalje </button>
+        <button type="button" (click)="submitForm(packageForm.value)">Submit</button>
+    </div>
+</form>
+
+<!-- {{ this.recipient.ime }} {{ this.recipient.prezime }} <br>
+
+{{ this.sender.ime }} {{ this.sender.prezime }} -->
