@@ -21,6 +21,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AllLettersComponent } from './all-letters/all-letters.component';
 import { AddressesComponent } from './addresses/addresses.component';
 import { MatSelectModule, MatTableModule, MatAutocompleteModule } from '@angular/material';
+import { AllPackagesComponent } from './all-packages/all-packages.component';
 
 const appRoutes = [
   { path: '', component: StartComponent },
@@ -29,6 +30,7 @@ const appRoutes = [
   { path: 'package', component: PackageComponent },
   { path: 'finance', component: FinancialTransactionComponent },
   { path: 'allLetters', component: AllLettersComponent },
+  { path: 'allPackages', component: AllPackagesComponent }
 ]
 @NgModule({
   declarations: [
@@ -41,6 +43,7 @@ const appRoutes = [
     AddNewUserComponent,
     AllLettersComponent,
     AddressesComponent,
+    AllPackagesComponent,
   ],
   entryComponents: [
     UserComponent,

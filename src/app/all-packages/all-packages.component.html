@@ -1,0 +1,45 @@
+<div class="example-container mat-elevation-z8">
+
+    <table mat-table [dataSource]="allPackages">
+
+    <ng-container matColumnDef="salje">
+      <th mat-header-cell *matHeaderCellDef> Šalje  </th>
+      <td mat-cell *matCellDef="let lett"> {{ lett.korisnik2.ime }} {{ lett.korisnik2.prezime }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="postaPrijema">
+      <th mat-header-cell *matHeaderCellDef> Pošta prijema  </th>
+      <td mat-cell *matCellDef="let lett">{{ lett.korisnik2.adresa.grad.postanskiBroj }} ( {{ lett.korisnik2.adresa.grad.naziv }} ) </td>
+    </ng-container>
+
+    <ng-container matColumnDef="datumPrijema">
+      <th mat-header-cell *matHeaderCellDef> Datum prijema  </th>
+      <td mat-cell *matCellDef="let lett">{{ lett.datumPrijema }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="prima">
+      <th mat-header-cell *matHeaderCellDef> Prima  </th>
+      <td mat-cell *matCellDef="let lett"> {{ lett.korisnik1.ime }} {{ lett.korisnik1.prezime }}</td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="postaDostave">
+      <th mat-header-cell *matHeaderCellDef> Pošta dostave  </th>
+      <td mat-cell *matCellDef="let lett">{{ lett.korisnik1.adresa.grad.postanskiBroj }} ( {{ lett.korisnik1.adresa.grad.naziv }} )</td>
+    </ng-container>
+
+    <ng-container matColumnDef="napomena">
+        <th mat-header-cell *matHeaderCellDef> Napomena  </th>
+        <td mat-cell *matCellDef="let lett">{{ lett.napomena }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="tezina">
+        <th mat-header-cell *matHeaderCellDef> Tezina  </th>
+        <td mat-cell *matCellDef="let lett">{{ lett.tezina }} g</td>
+      </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    </table>
+  </div>

@@ -66,6 +66,9 @@ export class PackageComponent implements OnInit {
 
       this.pckgService.insertPackage(temporarypackageObject)
       .subscribe(res => {
+        if (res.ok) {
+          this.router.navigate(['/allPackages']);
+        }
         console.log(res);
       }, err => console.log(err));
   }
