@@ -7,6 +7,7 @@ import { UserComponent } from '../user/user.component';
 import { Korisnik } from '../models/korisnik';
 import { Pismo } from '../models/pismo';
 import { LettersService } from '../services/letters.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-letters',
@@ -21,7 +22,7 @@ export class LettersComponent implements OnInit {
   letterForm;
 
   constructor(private cityService: CitiesService, private dialog: MatDialog,
-    private letterService: LettersService) {
+    private letterService: LettersService, private router: Router) {
     this.letterForm = new FormGroup({
       recommended: new FormControl()
     });
@@ -59,7 +60,9 @@ export class LettersComponent implements OnInit {
     var pismo = new Pismo(value.recommended, 'null', 'null', this.recipient, this.sender);
     this.letterService.insertLetter(pismo)
     .subscribe(resp => {
-      console.log(resp);
+      if (resp.ok) {
+        this.router.navigate(['/allLetters']);
+      }
     }, err => {
       console.log(err)
     });

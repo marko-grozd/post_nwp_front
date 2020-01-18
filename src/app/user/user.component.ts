@@ -37,8 +37,8 @@ export class UserComponent implements OnInit {
     this.service.findById(ref)
     .subscribe(resp => {
       this.korisnik = resp.json();
+      this.dialogRef.close(this.korisnik);
     });
-    this.dialogRef.close(this.korisnik);
   }
 
   closeWindow() {
