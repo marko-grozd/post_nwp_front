@@ -9,6 +9,7 @@ import { LettersService } from '../services/letters.service';
 export class AllLettersComponent implements OnInit {
 
   allLetters = [];
+  displayedColumns = ["preporuceno", "salje", "postaPrijema", "datumPrijema", "prima", "postaDostave"];
 
   constructor(private service: LettersService) { }
 

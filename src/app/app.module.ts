@@ -20,7 +20,7 @@ import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AllLettersComponent } from './all-letters/all-letters.component';
 import { AddressesComponent } from './addresses/addresses.component';
-import { MatSelectModule, MatAutocomplete, MatAutocompleteModule } from '@angular/material';
+import { MatSelectModule, MatTableModule, MatAutocompleteModule } from '@angular/material';
 
 const appRoutes = [
   { path: '', component: StartComponent },
@@ -51,6 +51,7 @@ const appRoutes = [
     RouterModule.forRoot(
       appRoutes, { /*enableTracing: true*/ } // <-- debugging purposes only
     ),
+    MatTableModule,
     MatSelectModule,
     BrowserModule,
     ReactiveFormsModule,

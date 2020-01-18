@@ -1,4 +1,4 @@
-<table class="table">
+<!-- <table class="table">
     <thead class="thead-dark">
       <tr>
         <th scope="col">tip</th>
@@ -19,4 +19,52 @@
         <td>{{ lett.korisnik1.adresa.grad.postanskiBroj }} ( {{ lett.korisnik1.adresa.grad.naziv }} )</td>
       </tr>
     </tbody>
-  </table>
+  </table> -->
+
+  <div class="example-container mat-elevation-z8">
+
+    <table mat-table [dataSource]="allLetters">
+      <!-- cries for refactoring :: TODO -->
+    <ng-container matColumnDef="preporuceno">
+      <th mat-header-cell *matHeaderCellDef> Tip  </th>
+      <td mat-cell *matCellDef="let lett">
+        <div *ngIf="lett.preporuceno == 1; else elseBlock">
+            <td>preporučeno</td>
+        </div>
+        <ng-template #elseBlock>
+          <td>obicno</td>
+        </ng-template>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="salje">
+      <th mat-header-cell *matHeaderCellDef> Šalje  </th>
+      <td mat-cell *matCellDef="let lett"> {{ lett.korisnik2.ime }} {{ lett.korisnik2.prezime }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="postaPrijema">
+      <th mat-header-cell *matHeaderCellDef> Pošta prijema  </th>
+      <td mat-cell *matCellDef="let lett">{{ lett.korisnik2.adresa.grad.postanskiBroj }} ( {{ lett.korisnik2.adresa.grad.naziv }} ) </td>
+    </ng-container>
+
+    <ng-container matColumnDef="datumPrijema">
+      <th mat-header-cell *matHeaderCellDef> Datum prijema  </th>
+      <td mat-cell *matCellDef="let lett">{{ lett.datumPrijema }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="prima">
+      <th mat-header-cell *matHeaderCellDef> Prima  </th>
+      <td mat-cell *matCellDef="let lett"> {{ lett.korisnik1.ime }} {{ lett.korisnik1.prezime }}</td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="postaDostave">
+      <th mat-header-cell *matHeaderCellDef> Pošta dostave  </th>
+      <td mat-cell *matCellDef="let lett">{{ lett.korisnik1.adresa.grad.postanskiBroj }} ( {{ lett.korisnik1.adresa.grad.naziv }} )</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    </table>
+  </div>
