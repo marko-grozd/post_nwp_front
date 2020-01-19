@@ -6,3 +6,11 @@
   table {
     width: 100%;
   }
+
+  mat-dialog-container {
+    height: 400px;
+}
+
+.page{
+  margin: 10px;
+}

@@ -29,6 +29,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatMenuModule} from '@angular/material/menu';
+import { AgmCoreModule } from '@agm/core';
+import { MapViewComponent } from './map-view/map-view.component';
 
 const appRoutes = [
   { path: '', component: StartComponent },
@@ -51,15 +53,20 @@ const appRoutes = [
     AllLettersComponent,
     AddressesComponent,
     AllPackagesComponent,
+    MapViewComponent,
   ],
-  entryComponents: [
+  entryComponents: [ //all dialog window's components
     UserComponent,
     AddNewUserComponent,
     AddressesComponent,
+    MapViewComponent
   ],
   imports: [
     RouterModule.forRoot(
       appRoutes, { /*enableTracing: true*/ } // <-- debugging purposes only
+    ),
+    AgmCoreModule.forRoot(
+      {apiKey: 'AIzaSyAK-MwalsbvZrwR0inRyEwvde-OvfWJIbw'}
     ),
     MatTableModule,
     MatSelectModule,

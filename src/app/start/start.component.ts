@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StartComponent implements OnInit {
 
+  latitude = 51.678418;
+  longitude = 7.809007;
+  
   constructor() { }
 
   ngOnInit() {

@@ -22,13 +22,13 @@
             <td><input type="text" formControlName="broj_lk"></td>
         </tr>
         <tr>
-            <td><button (click)="insertAddress()">Unos adrese</button></td>
+            <td><button class="btn btn-primary" (click)="insertAddress()">Unos adrese</button></td>
             <td>{{ addressName }}</td>
         </tr>
         <tr>
             <td><label>kucni broj</label></td>
             <td><input type="text" formControlName="kucni_broj"></td>
         </tr>
-        <tr><td><input type="submit" value="Unesi" (click)="onSubmit(userForm.value)"></td></tr>
+        <tr><td><input type="submit" class="btn btn-primary" value="Unesi" (click)="onSubmit(userForm.value)"></td></tr>
     </table>
 </form>
