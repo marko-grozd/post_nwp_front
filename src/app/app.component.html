@@ -1,1 +1,19 @@
-<router-outlet></router-outlet>
+      <mat-sidenav-container class="all-wrap" fullscreen>
+        <mat-sidenav style="background-color: #262523" #sidenav mode="side" closed>
+          <mat-nav-list style="color: whitesmoke;">
+            <a class="button" mat-list-item routerLink='/start'>Početna</a>
+            <a class="button" mat-list-item>Pisma</a>
+            <a class="button" mat-list-item style="margin-left:30px;" routerLink='/letter'>Unos novog pisma</a>
+            <a class="button" mat-list-item style="margin-left:30px;" routerLink='/allLetters'>Pregled svih</a>
+            <a class="button" mat-list-item>Paketi</a>
+            <a class="button" mat-list-item style="margin-left:30px;" routerLink='/package'>Prijem paketa</a>
+            <a class="button" mat-list-item style="margin-left:30px;" routerLink='/allPackages'>Pregled svih</a>
+            <a class="button" mat-list-item>Finansije</a>
+            <a class="button" mat-list-item style="margin-left:30px;" routerLink='/finance'>Uplata/isplata</a>
+          </mat-nav-list>
+        </mat-sidenav>
+        <mat-sidenav-content>
+                <a mat-button (click)="sidenav.toggle()"><i class="material-icons">menu</i></a> Semc nwp pošta
+          <router-outlet></router-outlet>
+        </mat-sidenav-content>
+      </mat-sidenav-container>

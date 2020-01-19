@@ -1,0 +1,12 @@
+#page{
+    position: absolute;
+    width: 600px;
+    height: 300px;
+    z-index: 15;
+    left: 40%;
+    margin: -100px 0 0 -150px;
+    font-size: 20px;
+    border-radius: 25px;
+    padding: 20px;
+    text-align: center !important;
+  }

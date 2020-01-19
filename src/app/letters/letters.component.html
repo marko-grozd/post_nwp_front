@@ -1,16 +1,18 @@
-<h3>Unos nove posiljke</h3>
+<div class="card my-5" id="page">
 
 
-
-
-<form [formGroup] = "letterForm" (ngSubmit)="onSubmit(letterForm.value)">
-    <table>
+    <h3>Unos nove posiljke</h3>
+<form [formGroup] = "letterForm">
+    <table style="margin-bottom: 30px;">
         <tr>
             <td>Tip: 
-                <select formControlName="recommended">
-                    <option value="1">Preporuceno</option>
-                    <option value="0">Obicno</option>
-                </select>
+                <mat-form-field>
+                <mat-label>Izaberite</mat-label>
+                <mat-select formControlName="recommended">
+                    <mat-option value="0">Obično</mat-option>
+                    <mat-option value="1">Preporučeno</mat-option>
+                </mat-select>
+            </mat-form-field>
             </td>
         </tr>
         <tr>
@@ -20,9 +22,10 @@
             <td *ngIf="sender != undefined">{{ this.sender.ime }} {{ this.sender.prezime }}</td>
         </tr>
     </table>
-    <input type="submit" value="Unesi">
+    <div>
+    <button mat-button (click)="onSubmit(letterForm.value)" style="background-color: green;">Unesi</button>
+</div>
 </form>
-
 <div class="form-check">
 
     
@@ -30,5 +33,5 @@
     
 </div>
 
-
+</div>
 

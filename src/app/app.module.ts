@@ -22,6 +22,13 @@ import { AllLettersComponent } from './all-letters/all-letters.component';
 import { AddressesComponent } from './addresses/addresses.component';
 import { MatSelectModule, MatTableModule, MatAutocompleteModule } from '@angular/material';
 import { AllPackagesComponent } from './all-packages/all-packages.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { MatMenuModule} from '@angular/material/menu';
 
 const appRoutes = [
   { path: '', component: StartComponent },
@@ -64,6 +71,13 @@ const appRoutes = [
     BrowserAnimationsModule,
     MatAutocompleteModule,
     MatInputModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
+    MatMenuModule
   ],
   providers: [
     MatDialogModule,
