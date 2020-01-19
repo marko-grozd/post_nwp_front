@@ -22,6 +22,8 @@ import { AllLettersComponent } from './all-letters/all-letters.component';
 import { AddressesComponent } from './addresses/addresses.component';
 import { MatSelectModule, MatTableModule, MatAutocompleteModule } from '@angular/material';
 import { AllPackagesComponent } from './all-packages/all-packages.component';
+import { AgmCoreModule } from '@agm/core';
+import { MapViewComponent } from './map-view/map-view.component';
 
 const appRoutes = [
   { path: '', component: StartComponent },
@@ -44,15 +46,20 @@ const appRoutes = [
     AllLettersComponent,
     AddressesComponent,
     AllPackagesComponent,
+    MapViewComponent,
   ],
-  entryComponents: [
+  entryComponents: [ //all dialog window's components
     UserComponent,
     AddNewUserComponent,
     AddressesComponent,
+    MapViewComponent
   ],
   imports: [
     RouterModule.forRoot(
       appRoutes, { /*enableTracing: true*/ } // <-- debugging purposes only
+    ),
+    AgmCoreModule.forRoot(
+      {apiKey: 'AIzaSyAK-MwalsbvZrwR0inRyEwvde-OvfWJIbw'}
     ),
     MatTableModule,
     MatSelectModule,
