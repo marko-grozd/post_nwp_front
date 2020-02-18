@@ -1,16 +1,34 @@
 <div class="page">
-    <form [formGroup] = "packageForm">
+    <form [formGroup]="packageForm">
 
-    <div class="form-group">
-        <label for="exampleFormControlTextarea1">Napomena </label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" formControlName="napomena"></textarea>
-        <label>Tezina</label>
-        <input type="text" formControlName="tezina"/>
-        <button style="margin:10px;" type="button" class="btn btn-warning" (click)="selectrecipient()"> Prima </button>
-        <button style="margin:10px;" type="button" class="btn btn-warning" (click)="selectsender()">Šalje </button>
-        <button style="margin:10px;" type="button" class="btn btn-primary"  (click)="submitForm(packageForm.value)">Submit</button>
-    </div>
-</form>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Napomena </label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                formControlName="napomena"></textarea>
+            <label>Tezina</label>
+            <input type="text" formControlName="tezina" />
+            <button style="margin:10px;" type="button" class="btn btn-warning" (click)="selectrecipient()"> Prima
+            </button>
+            <button style="margin:10px;" type="button" class="btn btn-warning" (click)="selectsender()">Šalje </button>
+            <button style="margin:10px;" type="button" class="btn btn-primary"
+                (click)="submitForm(packageForm.value)">Submit</button>
+        </div>
+        <mat-slide-toggle (click)="clicked()">Grupa primalaca </mat-slide-toggle>
+
+        <div *ngIf="show then trueT; else falseT">
+
+
+        </div>
+        <ng-template #trueT>
+            <select class="custom-select" multiple formControlName="multiple">
+                <option *ngFor="let usr of users" value="{{usr.idKorisnik}}">{{ usr.ime }} </option>
+            </select>
+        </ng-template>
+        <ng-template #falseT>
+
+        </ng-template>
+    </form>
+
 </div>
 
 <!-- {{ this.recipient.ime }} {{ this.recipient.prezime }} <br>

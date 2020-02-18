@@ -20,7 +20,7 @@ import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AllLettersComponent } from './all-letters/all-letters.component';
 import { AddressesComponent } from './addresses/addresses.component';
-import { MatSelectModule, MatTableModule, MatAutocompleteModule } from '@angular/material';
+import { MatSelectModule, MatTableModule, MatAutocompleteModule, MatSlideToggle, MatSlideToggleModule } from '@angular/material';
 import { AllPackagesComponent } from './all-packages/all-packages.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -66,8 +66,9 @@ const appRoutes = [
       appRoutes, { /*enableTracing: true*/ } // <-- debugging purposes only
     ),
     AgmCoreModule.forRoot(
-      {apiKey: 'AIzaSyAK-MwalsbvZrwR0inRyEwvde-OvfWJIbw'}
+      {apiKey: 'AIzaSyA0pOHi50HS0X_DpBrKpYP63WksTob-0Lk'}
     ),
+    MatSlideToggleModule,
     MatTableModule,
     MatSelectModule,
     BrowserModule,

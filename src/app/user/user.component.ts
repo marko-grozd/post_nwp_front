@@ -11,7 +11,7 @@ import { AddNewUserComponent } from '../add-new-user/add-new-user.component';
 })
 export class UserComponent implements OnInit {
 
-  private users=[];
+  private users = [];
   private korisnik: Korisnik;
 
   constructor(private service: UsersService, private dialog: MatDialog, private dialogRef: MatDialogRef<UserComponent>) { }
@@ -19,26 +19,25 @@ export class UserComponent implements OnInit {
   ngOnInit() {
 
     this.getUsers();
-
   }
 
   getUsers() {
-
+console.log("ucitao")
     this.service.getAllUsers()
-    .subscribe(resp => {
-      this.users = resp.json();
-    }, err=> {
-      console.log(err);
-    });
+      .subscribe(resp => {
+        this.users = resp.json();
+      }, err => {
+        console.log(err);
+      });
 
   }
 
   btn(ref) {
     this.service.findById(ref)
-    .subscribe(resp => {
-      this.korisnik = resp.json();
-      this.dialogRef.close(this.korisnik);
-    });
+      .subscribe(resp => {
+        this.korisnik = resp.json();
+        this.dialogRef.close(this.korisnik);
+      });
   }
 
   closeWindow() {
@@ -47,12 +46,10 @@ export class UserComponent implements OnInit {
 
   openaddnewuserdialog() {
     this.dialog.open(AddNewUserComponent)
-    .afterClosed().subscribe(
-      resp => this.getUsers()
-    );
+      .afterClosed().subscribe(
+        () => this.getUsers()
+      );
   }
-
-
 }
 
 

@@ -15,11 +15,13 @@
             </mat-form-field>
             </td>
         </tr>
+    </table>
+    <table style="margin-bottom: 30px;">
         <tr>
-            <td><button type="button" class="btn btn-warning" (click)="selectrecipient()"> Prima </button></td>
-            <td *ngIf="recipient != undefined"> {{ recipient.ime }} {{recipient.prezime }} </td>
-            <td><button type="button" class="btn btn-warning" (click)="selectsender()">Šalje </button></td>
-            <td *ngIf="sender != undefined">{{ this.sender.ime }} {{ this.sender.prezime }}</td>
+            <td style="text-align: left;"><button type="button" class="btn btn-warning" (click)="selectrecipient()">Prima</button></td>
+            <td style="text-align: left;" *ngIf="recipient != undefined"> {{ recipient.ime }} {{recipient.prezime }} </td>
+            <td style="text-align: left;"><button type="button" class="btn btn-warning" (click)="selectsender()">Šalje</button></td>
+            <td style="text-align: left;" *ngIf="sender != undefined">{{ this.sender.ime }} {{ this.sender.prezime }}</td>
         </tr>
     </table>
     <div>
